@@ -28,8 +28,93 @@ mv from:<path/file> target:<path/file>
 l <show all items in current directory> [-a <hidden folders>]
 ```
 
-![Image_of_Linux_Cheatsheet](Images/linux-cheat-sheet.webp)
-
-
-
 ## Steps to setting up a EC2 Machine
+
+
+**AWS**
+
+We log in through this [**LINK**](https://sparta-devops.signin.aws.amazon.com/console)
+
+
+**Post Requests**
+
+These happen behind the scenes and are usually data being sent to the server from the user, typically these are private details and they wont be visible in the URL. This is used sometimes during payment as it is confidential information that should not be seen by any other individuals.
+
+**Get Requests**
+
+These are requests that happen when you click a website for example you are getting all the URL requests and displaying the page. The URL usually contains paths and arguments of the get request too.
+
+They both have an end-point when they are made, these are used in different cases but have their specific uses.
+
+**AWS** website we went to `Services > EMC2 > Instances` then we click **Create** instance.
+
+**Creating an instance of a Machine**
+
+
+Now we are going to create an instance, of this particular machine:
+
+![InstanceOfMachine](../../Images/Machine_to_use_in_AWS.PNG)
+
+Then a list of machines are loaded, some of them are very powerful, with lots of **cores** and **gigabytes** these are more expensive but are available so must be in some kind of demand.
+
+We chose the t2.micro with **1** CPU and **1GB** of memory.
+
+In the configuring the instance we left everything except these settings below.
+
+![InstanceOfMachineInCOnfiguration](../../Images/AWS_Confuring_Instance.PNG)
+
+Then in the Tags section we added `Name` into the key and in the value we added our own naming convention, mine was `Eng67.John.Webapp`.
+
+![Securitygroup](../../Images/AWS_Security_Group_setup.PNG)
+
+Then we launched our server and navigated to our .ssh and added the DevOpsStudent.pem we were given.
+
+Whilst in the ssh folder in git bash we need to ssh into the Virtual Machine that is now being hosted on **AWS**. To access it we used the command:
+
+```bash
+ssh -i ~/.ssh/DevOpsStudents.pem ubuntu@<ip address from VM>
+```
+
+Now we are inside this Virtual Machine on the Amazon Web Services.
+
+Other users cannot SSH into our Virtual Machines, because when we set up the Virtual machines `security group` we set it to only allow our IP access our machine.
+
+**Moving some code to AWS VM**
+
+We installed the following:
+
+```bash
+sudo apt-get update
+
+sudo apt-get install nginx
+
+sudo apt-get install nodejs
+
+sudo apt-get install npm
+```
+
+Now we want to send a folder into our **EC2** instance being hosted on AWS.
+
+There is also a cool way to access a manual of certain commands when you use the `man` key word before a command, for example:
+
+```bash
+man scp <to send folders to VM on AWS>
+```
+
+To send a secure copy of our folder we are using:
+
+```bash
+scp -i <key> path/file user@ip:/path/file1
+```
+
+In the folder we can open the directory we are in using sublime with `subl .`
+
+We used the command:
+
+```bash
+scp -i ~/.ssh/DevOpsStudents.pem -r app/ ubuntu@3.250.67.195:~/app/
+```
+
+This then copied over the app folder from within our local directory into the virtual machines directory using the pem key to following by `-r` as this makes it recursive in order to move all the files until there are no more left. The letter `i` stands for identity and should have our public key to match with the stored private key on AWS.
+
+We did the necessary [provisioning](provision.sh) the our Virtual machines to to get NGINX running and NPM installed then the web server could be reached and by adding over people to my security group they were also able to access the web server.
