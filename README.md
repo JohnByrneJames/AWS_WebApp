@@ -23,7 +23,7 @@ scp -i ~/.ssh/DevOpsStudents.pem -r app/ ubuntu@<ip_address_of_EM2>:~/app/
 
 **Enter the EM2 Machine** via SSH
 ```bash
-scp -i ~/.ssh/DevOpsStudents.pem -r app/ ubuntu@3.250.67.195:~/app/
+ssh -i ~/.ssh/DevOpsStudents.pem ubuntu@<ip address from VM>
 ```
 
 **Move file/ folder** From one location to another
