@@ -16,16 +16,29 @@ In simple words AWS allows you to do the following things-
 
 ### Useful commands --
 
+**Secure Copy** of folder app to a new app folder inside the VM
 ```bash
 scp -i ~/.ssh/DevOpsStudents.pem -r app/ ubuntu@<ip_address_of_EM2>:~/app/
 ```
 
+**Enter the EM2 Machine** via SSH
+```bash
+scp -i ~/.ssh/DevOpsStudents.pem -r app/ ubuntu@3.250.67.195:~/app/
+```
+
+**Move file/ folder** From one location to another
 ```bash
 mv from:<path/file> target:<path/file>
 ```
 
+**List** this is like **ls** and lists all items in a directory
 ```bash
 l <show all items in current directory> [-a <hidden folders>]
+```
+
+**remove a folder** even if it is not empty
+```bash
+rm -rf <folder> # helps delete directory even if its not empty
 ```
 
 ## Steps to setting up a EC2 Machine
@@ -118,3 +131,11 @@ scp -i ~/.ssh/DevOpsStudents.pem -r app/ ubuntu@3.250.67.195:~/app/
 This then copied over the app folder from within our local directory into the virtual machines directory using the pem key to following by `-r` as this makes it recursive in order to move all the files until there are no more left. The letter `i` stands for identity and should have our public key to match with the stored private key on AWS.
 
 We did the necessary [provisioning](provision.sh) our Virtual machines to to get NGINX running and NPM installed then the web server could be reached and by adding over people to my security group they were also able to access the web server.
+
+### What is a production Environment
+
+A production environment is where software runs constantly and is widely available to end users and/ or software. 
+
+A production environment in DevOps is an environment where software and other products are actually put into operation for their intended uses by end users. A production environment can be thought of as a real-time setting where programs are run and hardware setups are installed and relied on for organization or commercial daily operations.
+
+The production environment is like the other environments used for testing and deployment, the only difference that it has is the most stable and up-to-date version of any product that has met the acceptance criteria for it to be released to the end-users. These end users will use the product and potentially provide feedback for future iterations of the software.
