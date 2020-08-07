@@ -53,7 +53,7 @@ They both have an end-point when they are made, these are used in different case
 
 Now we are going to create an instance, of this particular machine:
 
-![InstanceOfMachine](../../Images/Machine_to_use_in_AWS.PNG)
+![InstanceOfMachine](Images/Machine_to_use_in_AWS.PNG)
 
 Then a list of machines are loaded, some of them are very powerful, with lots of **cores** and **gigabytes** these are more expensive but are available so must be in some kind of demand.
 
@@ -61,11 +61,11 @@ We chose the t2.micro with **1** CPU and **1GB** of memory.
 
 In the configuring the instance we left everything except these settings below.
 
-![InstanceOfMachineInCOnfiguration](../../Images/AWS_Confuring_Instance.PNG)
+![InstanceOfMachineInCOnfiguration](Images/AWS_Confuring_Instance.PNG)
 
 Then in the Tags section we added `Name` into the key and in the value we added our own naming convention, mine was `Eng67.John.Webapp`.
 
-![Securitygroup](../../Images/AWS_Security_Group_setup.PNG)
+![Securitygroup](Images/AWS_Security_Group_setup.PNG)
 
 Then we launched our server and navigated to our .ssh and added the DevOpsStudent.pem we were given.
 
@@ -117,4 +117,4 @@ scp -i ~/.ssh/DevOpsStudents.pem -r app/ ubuntu@3.250.67.195:~/app/
 
 This then copied over the app folder from within our local directory into the virtual machines directory using the pem key to following by `-r` as this makes it recursive in order to move all the files until there are no more left. The letter `i` stands for identity and should have our public key to match with the stored private key on AWS.
 
-We did the necessary [provisioning](provision.sh) the our Virtual machines to to get NGINX running and NPM installed then the web server could be reached and by adding over people to my security group they were also able to access the web server.
+We did the necessary [provisioning](provision.sh) our Virtual machines to to get NGINX running and NPM installed then the web server could be reached and by adding over people to my security group they were also able to access the web server.
