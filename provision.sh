@@ -10,7 +10,8 @@ sudo apt-get install nginx
 sudo apt-get install nodejs
 sudo apt-get install npm
 
-scp -i ~/.ssh/DevOpsStudents.pem -r app/ ubuntu@3.250.67.195:~/app/
+# Copy over app folder
+# scp -i ~/.ssh/DevOpsStudents.pem -r app/ ubuntu@3.250.67.195:~/app/
 
 sudo apt-get upgrade 
 
