@@ -147,3 +147,16 @@ The production environment is like the other environments used for testing and d
 ![Securitygroup](Images/Value_Stream_Optimization_from_Dev_to_Prod.PNG)
 
 ![Securitygroup](Images/Environment_Components.PNG)
+
+
+**Steps I have taken Recorded Here**
+
+* I had to install a package called **Rsync** onto my windows machine, I downloaded this [Zip](http://www2.futureware.at/~nickoe/msys2-mirror/msys/x86_64/rsync-3.1.2-2-x86_64.pkg.tar.xz)
+
+Extracted it and inside the **bin** folder cut and paste the **rsync.ext** file into the following file path:
+
+`C:\Program Files\Git\usr\bin`
+
+Shut all instances of Git Bash, open a new instance and run `Rsync` to install the program.
+
+rsync -avz -e "-i ~/.ssh/DevOpsStudents.pem" --progress /app ubuntu@3.250.67.195:app/
