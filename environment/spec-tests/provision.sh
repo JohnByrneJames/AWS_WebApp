@@ -10,8 +10,7 @@ sudo apt-get install nginx
 sudo apt-get install nodejs
 sudo apt-get install npm
 
-# Copy over app folder
-# scp -i ~/.ssh/DevOpsStudents.pem -r app/ ubuntu@3.250.67.195:~/app/
+scp -i ~/.ssh/DevOpsStudents.pem -r app/ ubuntu@54.217.53.47:~/app/
 
 sudo apt-get upgrade 
 
@@ -26,6 +25,3 @@ sudo apt-get install nodejs -y
 sudo npm install
 
 sudo node app.js
-
-# When I do the Proxy here - 
-# I am going to add the reverse proxy to be done automatically.
