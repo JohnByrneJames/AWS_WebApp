@@ -139,3 +139,11 @@ A production environment is where software runs constantly and is widely availab
 A production environment in DevOps is an environment where software and other products are actually put into operation for their intended uses by end users. A production environment can be thought of as a real-time setting where programs are run and hardware setups are installed and relied on for organization or commercial daily operations.
 
 The production environment is like the other environments used for testing and deployment, the only difference that it has is the most stable and up-to-date version of any product that has met the acceptance criteria for it to be released to the end-users. These end users will use the product and potentially provide feedback for future iterations of the software.
+
+**Some interesting Images**
+
+
+
+![Securitygroup](Images/Value_Stream_Optimization_from_Dev_to_Prod.PNG)
+
+![Securitygroup](Images/Environment_Components.PNG)
