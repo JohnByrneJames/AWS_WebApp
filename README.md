@@ -16,8 +16,20 @@ In simple words AWS allows you to do the following things-
 
 ### Useful commands --
 
-```
+```bash
 scp -i ~/.ssh/DevOpsStudents.pem -r app/ ubuntu@<ip_address_of_EM2>:~/app/
 ```
+
+```bash
+mv from:<path/file> target:<path/file>
+```
+
+```bash
+l <show all items in current directory> [-a <hidden folders>]
+```
+
+![Image_of_Linux_Cheatsheet](Images/linux-cheat-sheet.webp)
+
+
 
 ## Steps to setting up a EC2 Machine
