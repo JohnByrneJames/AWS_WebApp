@@ -67,3 +67,4 @@ scp -i ~/.ssh/DevOpsStudents.pem -r app/ ubuntu@<ip_address_of_EM2>:~/app/
 ```
 
 Here we set up the database. This uses MongoDB and is used to display posts that are stored on that database when we connect it successfully to our node.js.
+
