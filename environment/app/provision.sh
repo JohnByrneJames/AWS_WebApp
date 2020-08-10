@@ -31,34 +31,23 @@ sudo node app.js
 # When I do the Proxy here - 
 # I am going to add the reverse proxy to be done automatically.
 
-# Navigate ~ /etc/nginx/sites-available/default
+cd /etc/nginx/sites-available
 
-# Remove Default file ~ sudo rm -r default
+sudo rm -r default
 
-# Create the file ~ sudo touch default | sudo nano default
+sudo ln -s /home/ubuntu/environment/app/default /etc/nginx/sites-available/default
 
-# server {
-#     listen 80;
-#     server_name _;
-#     location / {
-#         proxy_pass http://localhost:3000;
-#         proxy_http_version 1.1;
-#         proxy_set_header Upgrade $http_upgrade;
-#         proxy_set_header Connection 'upgrade';
-#         proxy_set_header Host $host;
-#         proxy_cache_bypass $http_upgrade;
-#     }
-# }
+sudo nginx -t
 
-# Test NGINX file ~ sudo nginx -t
+sudo systemctl restart nginx
 
-# Restart NGINX ~ sudo systemctl restart nginx
-
-# Check Status ~ sudo systemctl status nginx
+sudo systemctl status nginx
 
 # Add environment variable and install dependencies using NPM
-# export DB_HOST="mongodb://3.250.15.73:27017/posts"
+# export DB_HOST="mongodb://52.50.99.35:27017/posts"
+
 cd ~/app
 sudo su
 npm install
+npm test
 node app.js

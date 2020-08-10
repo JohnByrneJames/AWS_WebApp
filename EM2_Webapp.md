@@ -26,5 +26,6 @@ mv from:<path/file> target:<path/file>
 
 The first thing you need to do is get your EM2 Instances IP address. 
 
-![IPV4_IN_EM2_INSTANCE](Images/Machine_to_use_in_AWS.PNG)
+![IPV4_IN_EM2_INSTANCE](Images/Setting_up_AWS_instance_ipv4.PNG)
+
 

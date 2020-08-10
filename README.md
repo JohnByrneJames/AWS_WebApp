@@ -160,3 +160,7 @@ Extracted it and inside the **bin** folder cut and paste the **rsync.ext** file 
 Shut all instances of Git Bash, open a new instance and run `Rsync` to install the program.
 
 rsync -avz -e "-i ~/.ssh/DevOpsStudents.pem" --progress /app ubuntu@3.250.67.195:app/
+
+
+**CI with Jenkins**
+
